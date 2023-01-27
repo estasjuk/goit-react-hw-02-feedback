@@ -1,19 +1,20 @@
 import React from 'react';
 import css from './FeedbackOptions.module.css';
 
-const FeedbackOptions = ({ leaveVote }) => {
+const FeedbackOptions = ({ options, leaveVote }) => {
   return (
-    <div className={css.vote}>
-      <button onClick={() => leaveVote('good')} className={css.btn}>
-        Good
-      </button>
-      <button onClick={() => leaveVote('neutral')} className={css.btn}>
-        Neutral
-      </button>
-      <button onClick={() => leaveVote('bad')} className={css.btn}>
-        Bad
-      </button>
-    </div>
+    <>
+      {options.map(option => (
+        <button
+          className={css.btn}
+          key={option}
+          type="button"
+          onClick={() => leaveVote(option)}
+        >
+          {option}
+        </button>
+      ))}
+    </>
   );
 };
 

@@ -42,7 +42,10 @@ class Feedback extends Component {
     return (
       <div className={css.wrapper}>
         <Section title="Please leave feedback">
-          <FeedbackOptions leaveVote={this.leaveVote} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            leaveVote={this.leaveVote}
+          />
         </Section>
 
         {total !== 0 ? (
